@@ -139,7 +139,7 @@
 
         .chart-container {
             position: relative;
-            width: 100%;            
+            width: 100%;
             margin-top: 20px;
             background: linear-gradient(135deg, rgba(20, 30, 48, 0.9) 0%, rgba(30, 40, 60, 0.8) 100%);
             border-radius: 10px;
@@ -277,28 +277,14 @@
                     <p class="mb-4">Whether you're buying your first asset or restructuring a portfolio — start with intelligence, not instinct.</p>
                     <button type="button" class="cta-button me-3 border-0" data-bs-toggle="modal" data-bs-target="#consultationModal">BOOK A FREE CONSULTATION</button>
                     <p class="mt-3 mb-0">
-                        <a href="mailto:hello@flemingtonproperties.com" class="text-decoration-none">hello@flemingtonproperties.com</a>
+                        <a href="mailto:ub@flemington.ae" class="text-decoration-none">ub@flemington.ae</a>
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <p class="mb-2">Flemington Properties Advisory | Registered RERA Partner | © 2025</p>
-                    <p class="mb-0">
-                        <a href="#" class="text-white text-decoration-none me-3">LinkedIn</a>
-                        <a href="#" class="text-white text-decoration-none me-3">Twitter</a>
-                        <a href="#" class="text-white text-decoration-none">Blog</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php require_once('includes/footer.php'); ?>
 
     <!-- Consultation Modal -->
     <div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">

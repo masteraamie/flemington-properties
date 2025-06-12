@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +13,13 @@
             color: white;
             padding: 60px 0;
         }
-        
+
         .logo-section {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         .logo-icon {
             width: 50px;
             height: 50px;
@@ -30,38 +31,38 @@
             color: #2c3e50;
             font-size: 24px;
         }
-        
+
         .brand-text {
             font-size: 1.8rem;
             font-weight: bold;
             margin: 0;
         }
-        
+
         .brand-subtitle {
             font-size: 0.9rem;
             opacity: 0.9;
             letter-spacing: 2px;
             margin: 0;
         }
-        
+
         .page-title {
             font-size: 2.5rem;
             font-weight: bold;
             margin-top: 30px;
         }
-        
+
         .content-section {
             background: #f8f9fa;
             padding: 60px 0;
         }
-        
+
         .policy-container {
             background: white;
             border-radius: 10px;
             padding: 40px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .section-title {
             font-size: 1.5rem;
             font-weight: bold;
@@ -69,23 +70,23 @@
             margin-bottom: 1.2rem;
             margin-top: 2rem;
         }
-        
+
         .section-title:first-of-type {
             margin-top: 0;
         }
-        
+
         .policy-text {
             color: #555;
             line-height: 1.7;
             margin-bottom: 1.5rem;
         }
-        
+
         .footer-section {
             background: #2c3e50;
             color: white;
             padding: 40px 0;
         }
-        
+
         .last-updated {
             font-style: italic;
             color: #777;
@@ -93,38 +94,38 @@
             padding-top: 20px;
             border-top: 1px solid #eee;
         }
-        
+
         .toc-container {
             background: #f8f9fa;
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 30px;
         }
-        
+
         .toc-title {
             font-weight: bold;
             margin-bottom: 15px;
             color: #2c3e50;
         }
-        
+
         .toc-list {
             list-style-type: none;
             padding-left: 0;
         }
-        
+
         .toc-list li {
             margin-bottom: 8px;
         }
-        
+
         .toc-list a {
             color: #2c3e50;
             text-decoration: none;
         }
-        
+
         .toc-list a:hover {
             text-decoration: underline;
         }
-        
+
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -141,23 +142,24 @@
             opacity: 0.8;
             transition: opacity 0.3s;
         }
-        
+
         .back-to-top:hover {
             opacity: 1;
             color: white;
         }
-        
+
         @media (max-width: 768px) {
             .policy-container {
                 padding: 25px;
             }
-            
+
             .page-title {
                 font-size: 2rem;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Hero Section -->
     <section class="hero-section">
@@ -173,7 +175,7 @@
                             <p class="brand-subtitle">REAL ESTATE ADVISORY</p>
                         </div>
                     </div>
-                    
+
                     <h1 class="page-title">Privacy Policy</h1>
                     <p class="mb-0">How we collect, use, and protect your information</p>
                 </div>
@@ -204,7 +206,7 @@
                                 <li><a href="#contact">11. Contact Us</a></li>
                             </ul>
                         </div>
-                        
+
                         <!-- Introduction -->
                         <h2 class="section-title" id="introduction">1. Introduction</h2>
                         <p class="policy-text">
@@ -213,7 +215,7 @@
                         <p class="policy-text">
                             We value your trust and strive to be transparent about our data practices. By accessing or using our services, you agree to the terms of this Privacy Policy. If you do not agree with the terms of this Privacy Policy, please do not access the website or use our services.
                         </p>
-                        
+
                         <!-- Information Collection -->
                         <h2 class="section-title" id="information-collection">2. Information We Collect</h2>
                         <p class="policy-text">
@@ -231,7 +233,7 @@
                         <p class="policy-text">
                             <strong>Device Information:</strong> We collect information about the device you use to access our website, including IP address, browser type, operating system, and other technical information.
                         </p>
-                        
+
                         <!-- Information Use -->
                         <h2 class="section-title" id="information-use">3. How We Use Your Information</h2>
                         <p class="policy-text">
@@ -248,7 +250,7 @@
                             <li>To detect, prevent, and address technical issues and fraudulent activities</li>
                             <li>To comply with legal obligations and enforce our terms and policies</li>
                         </ul>
-                        
+
                         <!-- Information Sharing -->
                         <h2 class="section-title" id="information-sharing">4. Information Sharing and Disclosure</h2>
                         <p class="policy-text">
@@ -269,7 +271,7 @@
                         <p class="policy-text">
                             <strong>With Your Consent:</strong> We may share your information with your consent or at your direction.
                         </p>
-                        
+
                         <!-- Data Security -->
                         <h2 class="section-title" id="data-security">5. Data Security</h2>
                         <p class="policy-text">
@@ -278,7 +280,7 @@
                         <p class="policy-text">
                             While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security. You are responsible for maintaining the confidentiality of any passwords or account information.
                         </p>
-                        
+
                         <!-- Cookies -->
                         <h2 class="section-title" id="cookies">6. Cookies and Tracking Technologies</h2>
                         <p class="policy-text">
@@ -296,7 +298,7 @@
                         <p class="policy-text">
                             You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.
                         </p>
-                        
+
                         <!-- Your Rights -->
                         <h2 class="section-title" id="your-rights">7. Your Rights and Choices</h2>
                         <p class="policy-text">
@@ -313,13 +315,13 @@
                         <p class="policy-text">
                             To exercise these rights, please contact us using the information provided in the "Contact Us" section below.
                         </p>
-                        
+
                         <!-- Children's Privacy -->
                         <h2 class="section-title" id="children">8. Children's Privacy</h2>
                         <p class="policy-text">
                             Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children under 18. If we become aware that we have collected personal information from a child under 18 without verification of parental consent, we will take steps to remove that information from our servers.
                         </p>
-                        
+
                         <!-- International Transfers -->
                         <h2 class="section-title" id="international">9. International Data Transfers</h2>
                         <p class="policy-text">
@@ -328,7 +330,7 @@
                         <p class="policy-text">
                             By using our services, you consent to the transfer of your information to countries outside your country of residence, including the United States, where our central database is operated.
                         </p>
-                        
+
                         <!-- Changes to Policy -->
                         <h2 class="section-title" id="changes">10. Changes to This Privacy Policy</h2>
                         <p class="policy-text">
@@ -337,7 +339,7 @@
                         <p class="policy-text">
                             You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
                         </p>
-                        
+
                         <!-- Contact Us -->
                         <h2 class="section-title" id="contact">11. Contact Us</h2>
                         <p class="policy-text">
@@ -351,7 +353,7 @@
                             Email: privacy@flemingtonproperties.com<br>
                             Phone: (123) 456-7890
                         </p>
-                        
+
                         <!-- Last Updated -->
                         <p class="last-updated">
                             Last Updated: June 12, 2025
@@ -362,55 +364,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <p class="mb-2">Flemington Properties Advisory | Registered RERA Partner | © 2025</p>
-                    <p class="mb-0">
-                        <a href="index.html" class="text-white text-decoration-none me-3">Home</a>
-                        <a href="#" class="text-white text-decoration-none me-3">Terms of Service</a>
-                        <a href="privacy-policy.html" class="text-white text-decoration-none me-3">Privacy Policy</a>
-                        <a href="#" class="text-white text-decoration-none">Contact</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php require_once('includes/footer.php'); ?>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Back to top button functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const backToTopButton = document.querySelector('.back-to-top');
-            
-            // Show/hide button based on scroll position
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.style.display = 'flex';
-                } else {
-                    backToTopButton.style.display = 'none';
-                }
-            });
-            
-            // Initially hide the button
-            backToTopButton.style.display = 'none';
-            
-            // Smooth scroll to top when clicked
-            backToTopButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
+
 </html>
