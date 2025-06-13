@@ -135,6 +135,10 @@
             .brand-text {
                 font-size: 1.4rem;
             }
+
+            .hero-section {
+                padding: 3rem 1rem 3rem 1rem;
+            }
         }
 
         .chart-container {
@@ -277,7 +281,7 @@
                     <p class="mb-4">Whether you're buying your first asset or restructuring a portfolio — start with intelligence, not instinct.</p>
                     <button type="button" class="cta-button me-3 border-0" data-bs-toggle="modal" data-bs-target="#consultationModal">BOOK A FREE CONSULTATION</button>
                     <p class="mt-3 mb-0">
-                        <a href="mailto:ub@flemington.ae" class="text-decoration-none">ub@flemington.ae</a>
+                        You can also reach us directly at <a href="mailto:ub@flemington.ae" class="text-decoration-none">ub@flemington.ae</a>
                     </p>
                 </div>
             </div>
@@ -459,10 +463,10 @@
             const aroiChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['Tier-1', 'Tier-2'],
+                    labels: ['Tier-1', 'Tier-2', 'Tier-3'],
                     datasets: [{
                         label: '10-Year AROI',
-                        data: [5.6, 7.2],
+                        data: [5.6, 7.2, 9.2],
                         fill: false,
                         tension: 0.4,
                         borderColor: '#7fa6bd',
@@ -477,7 +481,7 @@
                         y: {
                             beginAtZero: false,
                             min: 1.5,
-                            max: 7.5,
+                            max: 9.5,
                             ticks: {
                                 callback: function(value) {
                                     return value + ' %';

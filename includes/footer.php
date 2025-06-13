@@ -2,22 +2,23 @@
     <footer class="footer-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12 col-sm-12 mb-2">
                     <p class="mb-2">Flemington Properties Advisory | Registered RERA Partner | © 2025</p>
                 </div>
 
-                <div class="d-flex justify-content-between">
-                    <div>
+                <div class="col-md-6 col-sm-12 mb-2">
+                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-twitter"></i></a>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6 col-sm-12">
                         <p class="mb-0">
                             <a href="/privacy-policy" class="text-white text-decoration-none me-3">Privacy Policy</a>
-                            <a href="/terms-and-conditions" class="text-white text-decoration-none me-3">Terms and Conditions</a>                            
-                        </p>
-                    </div>
-                    <div>
-                        <p class="mb-0">
-                            <a href="#" class="text-white text-decoration-none me-3">LinkedIn</a>
-                            <a href="#" class="text-white text-decoration-none me-3">Twitter</a>
-                            <a href="#" class="text-white text-decoration-none">Blog</a>
+                            <a href="/terms-and-conditions" class="text-white text-decoration-none me-3">Terms and Conditions</a>
                         </p>
                     </div>
                 </div>
