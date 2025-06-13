@@ -167,6 +167,142 @@
             bottom: 8px;
             left: 20px;
         }
+
+        .dubai-areas-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .area-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .large-card {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+
+        .medium-card {
+            grid-row: span 2;
+        }
+
+        .small-card {
+            grid-row: span 1;
+        }
+
+        .area-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.7) 0%, rgba(52, 73, 94, 0.5) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .area-card:hover .area-overlay {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(52, 73, 94, 0.6) 100%);
+        }
+
+        .area-content {
+            color: white;
+            width: 100%;
+        }
+
+        .property-count {
+            font-size: 14px;
+            opacity: 0.9;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .area-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .more-details-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .more-details-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateX(5px);
+        }
+
+        .more-details-btn i {
+            font-size: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .areas-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 250px;
+            }
+
+            .large-card,
+            .medium-card,
+            .small-card {
+                grid-row: span 1;
+                grid-column: span 1;
+            }
+
+            .area-name {
+                font-size: 1.5rem;
+            }
+
+            .dubai-areas-section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .large-card {
+                grid-column: span 1;
+            }
+        }
     </style>
 </head>
 
@@ -273,6 +409,104 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Dubai Areas Section -->
+            <section class="dubai-areas-section">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-lg-8 mx-auto text-center">
+                            <h2 class="section-title">Explore Dubai's Prime Locations</h2>
+                            <p class="lead">Discover investment opportunities across Dubai's most sought-after neighborhoods. From luxury waterfront properties to bustling business districts, find the perfect location for your next investment.</p>
+                        </div>
+                    </div>
+
+                    <div class="areas-grid">
+                        <!-- Business Bay -->
+                        <div class="area-card large-card" style="background-image: url('/placeholder.svg?height=400&width=600');">
+                            <div class="area-overlay">
+                                <div class="area-content">
+                                    <span class="property-count">12 Properties</span>
+                                    <h3 class="area-name">Business Bay</h3>
+                                    <button class="more-details-btn">
+                                        <span>MORE DETAILS</span>
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dubai Marina -->
+                        <div class="area-card medium-card" style="background-image: url('/placeholder.svg?height=350&width=500');">
+                            <div class="area-overlay">
+                                <div class="area-content">
+                                    <span class="property-count">8 Properties</span>
+                                    <h3 class="area-name">Dubai Marina</h3>
+                                    <button class="more-details-btn">
+                                        <span>MORE DETAILS</span>
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Downtown Dubai -->
+                        <div class="area-card medium-card" style="background-image: url('/placeholder.svg?height=400&width=600');">
+                            <div class="area-overlay">
+                                <div class="area-content">
+                                    <span class="property-count">15 Properties</span>
+                                    <h3 class="area-name">Downtown Dubai</h3>
+                                    <button class="more-details-btn">
+                                        <span>MORE DETAILS</span>
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Palm Jumeirah -->
+                        <div class="area-card large-card" style="background-image: url('/placeholder.svg?height=350&width=500');">
+                            <div class="area-overlay">
+                                <div class="area-content">
+                                    <span class="property-count">6 Properties</span>
+                                    <h3 class="area-name">Palm Jumeirah</h3>
+                                    <button class="more-details-btn">
+                                        <span>MORE DETAILS</span>
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dubai Hills -->
+                        <div class="area-card large-card" style="background-image: url('/placeholder.svg?height=250&width=400');">
+                            <div class="area-overlay">
+                                <div class="area-content">
+                                    <span class="property-count">4 Properties</span>
+                                    <h3 class="area-name">Dubai Hills</h3>
+                                    <button class="more-details-btn">
+                                        <span>MORE DETAILS</span>
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Jumeirah Beach Residence -->
+                        <div class="area-card medium-card" style="background-image: url('/placeholder.svg?height=250&width=400');">
+                            <div class="area-overlay">
+                                <div class="area-content">
+                                    <span class="property-count">7 Properties</span>
+                                    <h3 class="area-name">JBR</h3>
+                                    <button class="more-details-btn">
+                                        <span>MORE DETAILS</span>
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Call to Action Section -->
             <div class="row mt-5">
