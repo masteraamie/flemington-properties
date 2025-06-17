@@ -11,3 +11,10 @@ RewriteRule ^(.*)$ $1.php [L]
 
 # Prevent directory browsing
 Options -Indexes
+
+
+#prevent direct access to db-connection.php file
+<Files db-connection.php>
+    Order deny,allow
+    Deny from all
+</Files>
