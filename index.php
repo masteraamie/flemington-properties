@@ -641,176 +641,6 @@ function formatDate($date)
                     </a>
                 </div>
             </div>
-
-            <!-- Dubai Areas Section -->
-            <section class="dubai-areas-section">
-                <div class="container">
-                    <div class="row mb-5">
-                        <div class="col-lg-8 mx-auto text-center">
-                            <h2 class="section-title">Explore Dubai's Prime Locations</h2>
-                            <p class="lead">Discover investment opportunities across Dubai's most sought-after neighborhoods. From luxury waterfront properties to bustling business districts, find the perfect location for your next investment.</p>
-                        </div>
-                    </div>
-
-                    <div class="areas-grid">
-                        <!-- Business Bay -->
-                        <div class="area-card large-card" style="background-image: url('/assets/images/dubai-neighborhood-business-bay.webp');">
-                            <div class="area-overlay">
-                                <div class="area-content">
-                                    <span class="property-count">12 Properties</span>
-                                    <h3 class="area-name">Business Bay</h3>
-                                    <button class="more-details-btn  d-none">
-                                        <span>MORE DETAILS</span>
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Dubai Marina -->
-                        <div class="area-card medium-card" style="background-image: url('/assets/images/DSubai-marina-2-780x780.webp');">
-                            <div class="area-overlay">
-                                <div class="area-content">
-                                    <span class="property-count">8 Properties</span>
-                                    <h3 class="area-name">Dubai Marina</h3>
-                                    <button class="more-details-btn  d-none">
-                                        <span>MORE DETAILS</span>
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Downtown Dubai -->
-                        <div class="area-card medium-card" style="background-image: url('/assets/images/Downtown-dubai-2-780x780.jpg');">
-                            <div class="area-overlay">
-                                <div class="area-content">
-                                    <span class="property-count">15 Properties</span>
-                                    <h3 class="area-name">Downtown Dubai</h3>
-                                    <button class="more-details-btn  d-none">
-                                        <span>MORE DETAILS</span>
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Palm Jumeirah -->
-                        <div class="area-card large-card" style="background-image: url('/assets/images/palm-jumeirah-dubai-990x600.webp');">
-                            <div class="area-overlay">
-                                <div class="area-content">
-                                    <span class="property-count">6 Properties</span>
-                                    <h3 class="area-name">Palm Jumeirah</h3>
-                                    <button class="more-details-btn d-none">
-                                        <span>MORE DETAILS</span>
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Blog Section -->
-            <section class="blog-section">
-                <div class="container">
-                    <div class="row mb-5">
-                        <div class="col-lg-8 mx-auto text-center">
-                            <h2 class="section-title">Latest Market Insights</h2>
-                            <p class="lead">Stay ahead with our expert analysis, market trends, and investment insights. Get the knowledge you need to make informed real estate decisions.</p>
-                        </div>
-                    </div>
-
-                    <?php if (isset($db_error) || (!$featured_post && empty($recent_posts))): ?>
-                        <!-- Fallback content when database is unavailable -->
-                        <div class="no-posts-message">
-                            <i class="fas fa-newspaper"></i>
-                            <h4>Blog Content Coming Soon</h4>
-                            <p>We're preparing valuable market insights and analysis for you. Check back soon for the latest real estate trends and investment guidance.</p>
-                            <a href="blog.php" class="cta-button">
-                                Visit Our Blog <i class="fas fa-arrow-right ms-2"></i>
-                            </a>
-                        </div>
-                    <?php else: ?>
-                        <div class="row">
-                            <!-- Featured Blog Post -->
-                            <?php if ($featured_post): ?>
-                                <div class="col-lg-6 mb-4">
-                                    <article class="featured-blog-card">
-                                        <div class="blog-image" style="background-image: url('<?php echo htmlspecialchars($featured_post['featured_image'] ?: '/placeholder.svg?height=300&width=600'); ?>');"></div>
-                                        <div class="blog-content">
-                                            <span class="blog-category"><?php echo htmlspecialchars($featured_post['category']); ?></span>
-                                            <h3 class="blog-title">
-                                                <a href="blog-detail.php?slug=<?php echo urlencode($featured_post['slug']); ?>">
-                                                    <?php echo htmlspecialchars($featured_post['title']); ?>
-                                                </a>
-                                            </h3>
-                                            <p class="blog-excerpt">
-                                                <?php echo createExcerpt($featured_post['content'], 150); ?>
-                                            </p>
-                                            <div class="blog-meta">
-                                                <span><i class="fas fa-calendar-alt me-1"></i><?php echo formatDate($featured_post['created_at']); ?></span>
-                                                <span><i class="fas fa-eye me-1"></i><?php echo number_format($featured_post['views']); ?> views</span>
-                                                <span><i class="fas fa-clock me-1"></i><?php echo calculateReadingTime($featured_post['content']); ?> min read</span>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-                            <?php endif; ?>
-
-                            <!-- Recent Blog Posts -->
-                            <div class="col-lg-6">
-                                <div class="row">
-                                    <?php if (!empty($recent_posts)): ?>
-                                        <?php foreach ($recent_posts as $post): ?>
-                                            <div class="col-md-12 mb-4">
-                                                <article class="blog-card-small">
-                                                    <div class="row g-0">
-                                                        <div class="col-4">
-                                                            <div class="blog-image-small" style="background-image: url('<?php echo htmlspecialchars($post['featured_image'] ?: '/placeholder.svg?height=120&width=160'); ?>');"></div>
-                                                        </div>
-                                                        <div class="col-8">
-                                                            <div class="blog-content-small">
-                                                                <span class="blog-category-small"><?php echo htmlspecialchars($post['category']); ?></span>
-                                                                <h4 class="blog-title-small">
-                                                                    <a href="blog-detail.php?slug=<?php echo urlencode($post['slug']); ?>">
-                                                                        <?php echo htmlspecialchars($post['title']); ?>
-                                                                    </a>
-                                                                </h4>
-                                                                <div class="blog-meta-small">
-                                                                    <span><i class="fas fa-calendar-alt me-1"></i><?php echo formatDate($post['created_at']); ?></span>
-                                                                    <span><i class="fas fa-eye me-1"></i><?php echo number_format($post['views']); ?> views</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    <?php else: ?>
-                                        <!-- Show placeholder if no recent posts -->
-                                        <div class="col-12">
-                                            <div class="text-center py-4">
-                                                <p class="text-muted">More articles coming soon...</p>
-                                            </div>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-
-                    <div class="row mt-5">
-                        <div class="col-12 text-center">
-                            <a href="blog" class="cta-button">
-                                View All Articles <i class="fas fa-arrow-right ms-2"></i>
-                            </a>                          
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- Call to Action Section -->
             <div class="row mt-5">
                 <div class="col-lg-8">
@@ -824,6 +654,177 @@ function formatDate($date)
             </div>
         </div>
     </section>
+
+    <!-- Dubai Areas Section -->
+    <section class="dubai-areas-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">Explore Dubai's Prime Locations</h2>
+                    <p class="lead">Discover investment opportunities across Dubai's most sought-after neighborhoods. From luxury waterfront properties to bustling business districts, find the perfect location for your next investment.</p>
+                </div>
+            </div>
+
+            <div class="areas-grid">
+                <!-- Business Bay -->
+                <div class="area-card large-card" style="background-image: url('/assets/images/dubai-neighborhood-business-bay.webp');">
+                    <div class="area-overlay">
+                        <div class="area-content">
+                            <span class="property-count">12 Properties</span>
+                            <h3 class="area-name">Business Bay</h3>
+                            <button class="more-details-btn  d-none">
+                                <span>MORE DETAILS</span>
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dubai Marina -->
+                <div class="area-card medium-card" style="background-image: url('/assets/images/DSubai-marina-2-780x780.webp');">
+                    <div class="area-overlay">
+                        <div class="area-content">
+                            <span class="property-count">8 Properties</span>
+                            <h3 class="area-name">Dubai Marina</h3>
+                            <button class="more-details-btn  d-none">
+                                <span>MORE DETAILS</span>
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Downtown Dubai -->
+                <div class="area-card medium-card" style="background-image: url('/assets/images/Downtown-dubai-2-780x780.jpg');">
+                    <div class="area-overlay">
+                        <div class="area-content">
+                            <span class="property-count">15 Properties</span>
+                            <h3 class="area-name">Downtown Dubai</h3>
+                            <button class="more-details-btn  d-none">
+                                <span>MORE DETAILS</span>
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Palm Jumeirah -->
+                <div class="area-card large-card" style="background-image: url('/assets/images/palm-jumeirah-dubai-990x600.webp');">
+                    <div class="area-overlay">
+                        <div class="area-content">
+                            <span class="property-count">6 Properties</span>
+                            <h3 class="area-name">Palm Jumeirah</h3>
+                            <button class="more-details-btn d-none">
+                                <span>MORE DETAILS</span>
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">Latest Market Insights</h2>
+                    <p class="lead">Stay ahead with our expert analysis, market trends, and investment insights. Get the knowledge you need to make informed real estate decisions.</p>
+                </div>
+            </div>
+
+            <?php if (isset($db_error) || (!$featured_post && empty($recent_posts))): ?>
+                <!-- Fallback content when database is unavailable -->
+                <div class="no-posts-message">
+                    <i class="fas fa-newspaper"></i>
+                    <h4>Blog Content Coming Soon</h4>
+                    <p>We're preparing valuable market insights and analysis for you. Check back soon for the latest real estate trends and investment guidance.</p>
+                    <a href="blog.php" class="cta-button">
+                        Visit Our Blog <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            <?php else: ?>
+                <div class="row">
+                    <!-- Featured Blog Post -->
+                    <?php if ($featured_post): ?>
+                        <div class="col-lg-6 mb-4">
+                            <article class="featured-blog-card">
+                                <div class="blog-image" style="background-image: url('<?php echo htmlspecialchars($featured_post['featured_image'] ?: '/placeholder.svg?height=300&width=600'); ?>');"></div>
+                                <div class="blog-content">
+                                    <span class="blog-category"><?php echo htmlspecialchars($featured_post['category']); ?></span>
+                                    <h3 class="blog-title">
+                                        <a href="blog-detail.php?slug=<?php echo urlencode($featured_post['slug']); ?>">
+                                            <?php echo htmlspecialchars($featured_post['title']); ?>
+                                        </a>
+                                    </h3>
+                                    <p class="blog-excerpt">
+                                        <?php echo createExcerpt($featured_post['content'], 150); ?>
+                                    </p>
+                                    <div class="blog-meta">
+                                        <span><i class="fas fa-calendar-alt me-1"></i><?php echo formatDate($featured_post['created_at']); ?></span>
+                                        <span><i class="fas fa-eye me-1"></i><?php echo number_format($featured_post['views']); ?> views</span>
+                                        <span><i class="fas fa-clock me-1"></i><?php echo calculateReadingTime($featured_post['content']); ?> min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- Recent Blog Posts -->
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <?php if (!empty($recent_posts)): ?>
+                                <?php foreach ($recent_posts as $post): ?>
+                                    <div class="col-md-12 mb-4">
+                                        <article class="blog-card-small">
+                                            <div class="row g-0">
+                                                <div class="col-4">
+                                                    <div class="blog-image-small" style="background-image: url('<?php echo htmlspecialchars($post['featured_image'] ?: '/placeholder.svg?height=120&width=160'); ?>');"></div>
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="blog-content-small">
+                                                        <span class="blog-category-small"><?php echo htmlspecialchars($post['category']); ?></span>
+                                                        <h4 class="blog-title-small">
+                                                            <a href="blog-detail.php?slug=<?php echo urlencode($post['slug']); ?>">
+                                                                <?php echo htmlspecialchars($post['title']); ?>
+                                                            </a>
+                                                        </h4>
+                                                        <div class="blog-meta-small">
+                                                            <span><i class="fas fa-calendar-alt me-1"></i><?php echo formatDate($post['created_at']); ?></span>
+                                                            <span><i class="fas fa-eye me-1"></i><?php echo number_format($post['views']); ?> views</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <!-- Show placeholder if no recent posts -->
+                                <div class="col-12">
+                                    <div class="text-center py-4">
+                                        <p class="text-muted">More articles coming soon...</p>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="blog" class="cta-button">
+                        View All Articles <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <?php require_once('includes/footer.php'); ?>
 
