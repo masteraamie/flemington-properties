@@ -167,9 +167,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="logo-section mb-4">
-                        <div class="logo-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
+                        <?php include('includes/logo.php')  ?>
                         <div>
                             <h1 class="brand-text">Flemington Properties</h1>
                             <p class="brand-subtitle">REAL ESTATE ADVISORY</p>
