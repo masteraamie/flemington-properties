@@ -218,7 +218,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(44, 62, 80, 0.7) 0%, rgba(52, 73, 94, 0.5) 100%);
+            /* background: linear-gradient(135deg, rgba(44, 62, 80, 0.7) 0%, rgba(52, 73, 94, 0.5) 100%); */
+            background: linear-gradient(135deg, rgb(0 0 0 / 70%) 0%, rgba(52, 73, 94, 0.5) 100%);
             display: flex;
             align-items: flex-end;
             padding: 25px;
@@ -226,7 +227,7 @@
         }
 
         .area-card:hover .area-overlay {
-            background: linear-gradient(135deg, rgba(44, 62, 80, 0.8) 0%, rgba(52, 73, 94, 0.6) 100%);
+            background: linear-gradient(135deg, rgb(0 0 0 / 80%) 0%, rgba(52, 73, 94, 0.6) 100%);
         }
 
         .area-content {
@@ -422,7 +423,7 @@
 
                     <div class="areas-grid">
                         <!-- Business Bay -->
-                        <div class="area-card large-card" style="background-image: url('/placeholder.svg?height=400&width=600');">
+                        <div class="area-card large-card" style="background-image: url('/assets/images/dubai-neighborhood-business-bay.webp');">
                             <div class="area-overlay">
                                 <div class="area-content">
                                     <span class="property-count">12 Properties</span>
@@ -436,7 +437,7 @@
                         </div>
 
                         <!-- Dubai Marina -->
-                        <div class="area-card medium-card" style="background-image: url('/placeholder.svg?height=350&width=500');">
+                        <div class="area-card medium-card" style="background-image: url('/assets/images/DSubai-marina-2-780x780.webp');">
                             <div class="area-overlay">
                                 <div class="area-content">
                                     <span class="property-count">8 Properties</span>
@@ -450,7 +451,7 @@
                         </div>
 
                         <!-- Downtown Dubai -->
-                        <div class="area-card medium-card" style="background-image: url('/placeholder.svg?height=400&width=600');">
+                        <div class="area-card medium-card" style="background-image: url('/assets/images/Downtown-dubai-2-780x780.jpg');">
                             <div class="area-overlay">
                                 <div class="area-content">
                                     <span class="property-count">15 Properties</span>
@@ -464,7 +465,7 @@
                         </div>
 
                         <!-- Palm Jumeirah -->
-                        <div class="area-card large-card" style="background-image: url('/placeholder.svg?height=350&width=500');">
+                        <div class="area-card large-card" style="background-image: url('/assets/images/palm-jumeirah-dubai-990x600.webp');">
                             <div class="area-overlay">
                                 <div class="area-content">
                                     <span class="property-count">6 Properties</span>
@@ -475,35 +476,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Dubai Hills -->
-                        <div class="area-card large-card" style="background-image: url('/placeholder.svg?height=250&width=400');">
-                            <div class="area-overlay">
-                                <div class="area-content">
-                                    <span class="property-count">4 Properties</span>
-                                    <h3 class="area-name">Dubai Hills</h3>
-                                    <button class="more-details-btn">
-                                        <span>MORE DETAILS</span>
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Jumeirah Beach Residence -->
-                        <div class="area-card medium-card" style="background-image: url('/placeholder.svg?height=250&width=400');">
-                            <div class="area-overlay">
-                                <div class="area-content">
-                                    <span class="property-count">7 Properties</span>
-                                    <h3 class="area-name">JBR</h3>
-                                    <button class="more-details-btn">
-                                        <span>MORE DETAILS</span>
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        </div>                      
                     </div>
                 </div>
             </section>
