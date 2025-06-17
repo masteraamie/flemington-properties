@@ -7,11 +7,11 @@
                 </div>
 
                 <div class="col-md-6 col-sm-12 mb-2">
-                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61571613819926" class="text-white text-decoration-none me-3"><i class="fab fa-facebook"></i></a>
+                    <!-- <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-linkedin"></i></a> -->
+                    <a href="https://www.instagram.com/flemingtonproperties" class="text-white text-decoration-none me-3"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-white text-decoration-none me-3"><i class="fab fa-twitter"></i></a> -->
                 </div>
 
                 <div class="row mb-3">
