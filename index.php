@@ -428,7 +428,7 @@
                                 <div class="area-content">
                                     <span class="property-count">12 Properties</span>
                                     <h3 class="area-name">Business Bay</h3>
-                                    <button class="more-details-btn">
+                                    <button class="more-details-btn  d-none">
                                         <span>MORE DETAILS</span>
                                         <i class="fas fa-play"></i>
                                     </button>
@@ -442,7 +442,7 @@
                                 <div class="area-content">
                                     <span class="property-count">8 Properties</span>
                                     <h3 class="area-name">Dubai Marina</h3>
-                                    <button class="more-details-btn">
+                                    <button class="more-details-btn  d-none">
                                         <span>MORE DETAILS</span>
                                         <i class="fas fa-play"></i>
                                     </button>
@@ -456,7 +456,7 @@
                                 <div class="area-content">
                                     <span class="property-count">15 Properties</span>
                                     <h3 class="area-name">Downtown Dubai</h3>
-                                    <button class="more-details-btn">
+                                    <button class="more-details-btn  d-none">
                                         <span>MORE DETAILS</span>
                                         <i class="fas fa-play"></i>
                                     </button>
@@ -470,13 +470,13 @@
                                 <div class="area-content">
                                     <span class="property-count">6 Properties</span>
                                     <h3 class="area-name">Palm Jumeirah</h3>
-                                    <button class="more-details-btn">
+                                    <button class="more-details-btn d-none">
                                         <span>MORE DETAILS</span>
                                         <i class="fas fa-play"></i>
                                     </button>
                                 </div>
                             </div>
-                        </div>                      
+                        </div>
                     </div>
                 </div>
             </section>
