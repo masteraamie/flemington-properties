@@ -46,6 +46,7 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,13 +59,13 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
             color: white;
             padding: 60px 0;
         }
-        
+
         .logo-section {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         .logo-icon {
             width: 50px;
             height: 50px;
@@ -76,54 +77,54 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
             color: #2c3e50;
             font-size: 24px;
         }
-        
+
         .brand-text {
             font-size: 1.8rem;
             font-weight: bold;
             margin: 0;
         }
-        
+
         .brand-subtitle {
             font-size: 0.9rem;
             opacity: 0.9;
             letter-spacing: 2px;
             margin: 0;
         }
-        
+
         .page-title {
             font-size: 2.5rem;
             font-weight: bold;
             margin-top: 30px;
         }
-        
+
         .content-section {
             background: #f8f9fa;
             padding: 80px 0;
         }
-        
+
         .blog-card {
             background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
         }
-        
+
         .blog-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .blog-image {
             height: 200px;
             background-size: cover;
             background-position: center;
             position: relative;
         }
-        
+
         .blog-category {
             position: absolute;
             top: 15px;
@@ -135,14 +136,14 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
             font-size: 12px;
             font-weight: 600;
         }
-        
+
         .blog-content {
             padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        
+
         .blog-title {
             font-size: 1.3rem;
             font-weight: bold;
@@ -150,23 +151,23 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
             margin-bottom: 15px;
             line-height: 1.4;
         }
-        
+
         .blog-title a {
             color: inherit;
             text-decoration: none;
         }
-        
+
         .blog-title a:hover {
             color: #34495e;
         }
-        
+
         .blog-excerpt {
             color: #666;
             line-height: 1.6;
             margin-bottom: 20px;
             flex-grow: 1;
         }
-        
+
         .blog-meta {
             display: flex;
             justify-content: space-between;
@@ -176,26 +177,26 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
             border-top: 1px solid #eee;
             padding-top: 15px;
         }
-        
+
         .read-more {
             color: #2c3e50;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
         }
-        
+
         .read-more:hover {
             color: #34495e;
         }
-        
+
         .filter-section {
             background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             margin-bottom: 40px;
         }
-        
+
         .filter-btn {
             background: #f8f9fa;
             border: 1px solid #dee2e6;
@@ -207,52 +208,53 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
             display: inline-block;
             transition: all 0.3s ease;
         }
-        
+
         .filter-btn:hover,
         .filter-btn.active {
             background: #2c3e50;
             color: white;
             border-color: #2c3e50;
         }
-        
+
         .pagination {
             justify-content: center;
             margin-top: 50px;
         }
-        
+
         .page-link {
             color: #2c3e50;
             border-color: #dee2e6;
         }
-        
+
         .page-link:hover {
             color: #34495e;
             background-color: #f8f9fa;
             border-color: #dee2e6;
         }
-        
+
         .page-item.active .page-link {
             background-color: #2c3e50;
             border-color: #2c3e50;
         }
-        
+
         .footer-section {
             background: #2c3e50;
             color: white;
             padding: 40px 0;
         }
-        
+
         @media (max-width: 768px) {
             .page-title {
                 font-size: 2rem;
             }
-            
+
             .content-section {
                 padding: 60px 0;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Hero Section -->
     <section class="hero-section">
@@ -260,15 +262,13 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
             <div class="row">
                 <div class="col-lg-12">
                     <div class="logo-section mb-4">
-                        <div class="logo-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
+                        <?php include('includes/logo.php')  ?>
                         <div>
                             <h1 class="brand-text">Flemington Properties</h1>
                             <p class="brand-subtitle">REAL ESTATE ADVISORY</p>
                         </div>
                     </div>
-                    
+
                     <h1 class="page-title">Market Insights & Analysis</h1>
                     <p class="mb-0">Stay informed with the latest real estate trends, market analysis, and investment insights</p>
                 </div>
@@ -286,8 +286,8 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
                         <h5 class="mb-3 mb-md-0">Filter by Category:</h5>
                         <a href="blog" class="filter-btn <?php echo empty($category_filter) ? 'active' : ''; ?>">All Posts</a>
                         <?php foreach ($categories as $category): ?>
-                            <a href="blog?category=<?php echo urlencode($category); ?>" 
-                               class="filter-btn <?php echo $category_filter === $category ? 'active' : ''; ?>">
+                            <a href="blog?category=<?php echo urlencode($category); ?>"
+                                class="filter-btn <?php echo $category_filter === $category ? 'active' : ''; ?>">
                                 <?php echo htmlspecialchars($category); ?>
                             </a>
                         <?php endforeach; ?>
@@ -392,4 +392,5 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

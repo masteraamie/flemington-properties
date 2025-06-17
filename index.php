@@ -1,3 +1,61 @@
+<?php
+require_once 'includes/db-connection.php';
+
+// Fetch featured blog post (most recent published post)
+$featured_post = null;
+$recent_posts = [];
+
+if (!isset($db_error)) {
+    try {
+        // Get featured post (most recent with highest views)
+        $featured_sql = "SELECT * FROM blog_posts WHERE status = 'published' ORDER BY views DESC, created_at DESC LIMIT 1";
+        $featured_stmt = $pdo->prepare($featured_sql);
+        $featured_stmt->execute();
+        $featured_post = $featured_stmt->fetch(PDO::FETCH_ASSOC);
+
+        // Get recent posts (excluding the featured one)
+        $recent_sql = "SELECT * FROM blog_posts WHERE status = 'published'";
+        if ($featured_post) {
+            $recent_sql .= " AND id != :featured_id";
+        }
+        $recent_sql .= " ORDER BY created_at DESC LIMIT 3";
+
+        $recent_stmt = $pdo->prepare($recent_sql);
+        if ($featured_post) {
+            $recent_stmt->bindParam(':featured_id', $featured_post['id']);
+        }
+        $recent_stmt->execute();
+        $recent_posts = $recent_stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        // If query fails, fall back to static content
+        $db_error = true;
+    }
+}
+
+// Helper function to calculate reading time
+function calculateReadingTime($content)
+{
+    $word_count = str_word_count(strip_tags($content));
+    $reading_time = ceil($word_count / 200); // Average reading speed: 200 words per minute
+    return max(1, $reading_time); // Minimum 1 minute
+}
+
+// Helper function to create excerpt
+function createExcerpt($content, $length = 150)
+{
+    $text = strip_tags($content);
+    if (strlen($text) <= $length) {
+        return $text;
+    }
+    return substr($text, 0, $length) . '...';
+}
+
+// Helper function to format date
+function formatDate($date)
+{
+    return date('M j, Y', strtotime($date));
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -304,6 +362,181 @@
                 grid-column: span 1;
             }
         }
+
+        .blog-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .featured-blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .featured-blog-card .blog-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .featured-blog-card .blog-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-blog-card .blog-category {
+            background: #2c3e50;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .featured-blog-card .blog-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .featured-blog-card .blog-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .featured-blog-card .blog-title a:hover {
+            color: #34495e;
+        }
+
+        .featured-blog-card .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .featured-blog-card .blog-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .blog-card-small {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 120px;
+        }
+
+        .blog-card-small:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .blog-image-small {
+            height: 120px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-content-small {
+            padding: 15px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .blog-category-small {
+            background: #f8f9fa;
+            color: #2c3e50;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .blog-title-small {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .blog-title-small a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .blog-title-small a:hover {
+            color: #34495e;
+        }
+
+        .blog-meta-small {
+            display: flex;
+            gap: 10px;
+            font-size: 11px;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .blog-section {
+                padding: 60px 0;
+            }
+
+            .featured-blog-card .blog-image {
+                height: 200px;
+            }
+
+            .featured-blog-card .blog-content {
+                padding: 20px;
+            }
+
+            .featured-blog-card .blog-title {
+                font-size: 1.3rem;
+            }
+
+            .blog-card-small {
+                margin-bottom: 15px;
+            }
+
+            .blog-meta {
+                flex-wrap: wrap;
+                gap: 10px !important;
+            }
+        }
     </style>
 </head>
 
@@ -314,9 +547,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <div class="logo-section mb-4">
-                        <div class="logo-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
+                        <?php include('includes/logo.php')  ?>
                         <div>
                             <h1 class="brand-text">Flemington Properties</h1>
                             <p class="brand-subtitle">REAL ESTATE ADVISORY</p>
@@ -476,6 +707,105 @@
                                     </button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Section -->
+            <section class="blog-section">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-lg-8 mx-auto text-center">
+                            <h2 class="section-title">Latest Market Insights</h2>
+                            <p class="lead">Stay ahead with our expert analysis, market trends, and investment insights. Get the knowledge you need to make informed real estate decisions.</p>
+                        </div>
+                    </div>
+
+                    <?php if (isset($db_error) || (!$featured_post && empty($recent_posts))): ?>
+                        <!-- Fallback content when database is unavailable -->
+                        <div class="no-posts-message">
+                            <i class="fas fa-newspaper"></i>
+                            <h4>Blog Content Coming Soon</h4>
+                            <p>We're preparing valuable market insights and analysis for you. Check back soon for the latest real estate trends and investment guidance.</p>
+                            <a href="blog.php" class="cta-button">
+                                Visit Our Blog <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    <?php else: ?>
+                        <div class="row">
+                            <!-- Featured Blog Post -->
+                            <?php if ($featured_post): ?>
+                                <div class="col-lg-6 mb-4">
+                                    <article class="featured-blog-card">
+                                        <div class="blog-image" style="background-image: url('<?php echo htmlspecialchars($featured_post['featured_image'] ?: '/placeholder.svg?height=300&width=600'); ?>');"></div>
+                                        <div class="blog-content">
+                                            <span class="blog-category"><?php echo htmlspecialchars($featured_post['category']); ?></span>
+                                            <h3 class="blog-title">
+                                                <a href="blog-detail.php?slug=<?php echo urlencode($featured_post['slug']); ?>">
+                                                    <?php echo htmlspecialchars($featured_post['title']); ?>
+                                                </a>
+                                            </h3>
+                                            <p class="blog-excerpt">
+                                                <?php echo createExcerpt($featured_post['content'], 150); ?>
+                                            </p>
+                                            <div class="blog-meta">
+                                                <span><i class="fas fa-calendar-alt me-1"></i><?php echo formatDate($featured_post['created_at']); ?></span>
+                                                <span><i class="fas fa-eye me-1"></i><?php echo number_format($featured_post['views']); ?> views</span>
+                                                <span><i class="fas fa-clock me-1"></i><?php echo calculateReadingTime($featured_post['content']); ?> min read</span>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            <?php endif; ?>
+
+                            <!-- Recent Blog Posts -->
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <?php if (!empty($recent_posts)): ?>
+                                        <?php foreach ($recent_posts as $post): ?>
+                                            <div class="col-md-12 mb-4">
+                                                <article class="blog-card-small">
+                                                    <div class="row g-0">
+                                                        <div class="col-4">
+                                                            <div class="blog-image-small" style="background-image: url('<?php echo htmlspecialchars($post['featured_image'] ?: '/placeholder.svg?height=120&width=160'); ?>');"></div>
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <div class="blog-content-small">
+                                                                <span class="blog-category-small"><?php echo htmlspecialchars($post['category']); ?></span>
+                                                                <h4 class="blog-title-small">
+                                                                    <a href="blog-detail.php?slug=<?php echo urlencode($post['slug']); ?>">
+                                                                        <?php echo htmlspecialchars($post['title']); ?>
+                                                                    </a>
+                                                                </h4>
+                                                                <div class="blog-meta-small">
+                                                                    <span><i class="fas fa-calendar-alt me-1"></i><?php echo formatDate($post['created_at']); ?></span>
+                                                                    <span><i class="fas fa-eye me-1"></i><?php echo number_format($post['views']); ?> views</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <!-- Show placeholder if no recent posts -->
+                                        <div class="col-12">
+                                            <div class="text-center py-4">
+                                                <p class="text-muted">More articles coming soon...</p>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="row mt-5">
+                        <div class="col-12 text-center">
+                            <a href="blog" class="cta-button">
+                                View All Articles <i class="fas fa-arrow-right ms-2"></i>
+                            </a>                          
                         </div>
                     </div>
                 </div>
