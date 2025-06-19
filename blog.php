@@ -283,7 +283,7 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
             <div class="filter-section">
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <h5 class="mb-3 mb-md-0">Filter by Category:</h5>
+                        <h5 class="mb-3 mb-md-2">Filter by Category:</h5>
                         <a href="blog" class="filter-btn <?php echo empty($category_filter) ? 'active' : ''; ?>">All Posts</a>
                         <?php foreach ($categories as $category): ?>
                             <a href="blog?category=<?php echo urlencode($category); ?>"
