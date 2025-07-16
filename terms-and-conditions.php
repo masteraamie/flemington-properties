@@ -417,13 +417,11 @@
                             If you have any questions about these Terms and Conditions, please contact us:
                         </p>
                         <p class="terms-text">
-                            <strong>Flemington Properties</strong><br>
-                            123 Real Estate Avenue<br>
-                            Suite 500<br>
-                            New York, NY 10001<br>
-                            Email: legal@flemingtonproperties.com<br>
-                            Phone: (123) 456-7890<br>
-                            Business Hours: Monday - Friday, 9:00 AM - 6:00 PM EST
+                            <strong>Flemington Properties LLC</strong><br>
+                            Empire Heights A, <br>
+                            Dubai, UAE
+                            Email: <a href="mailto:ub@flemington.ae">ub@flemington.ae</a><br>
+                            Phone: <a href="tel:+971 50 531 0658">+971 50 531 0658</a><br></a>
                         </p>
 
                         <!-- Last Updated -->
