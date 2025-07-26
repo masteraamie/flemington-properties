@@ -66,7 +66,62 @@ function formatDate($date)
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+
+        .bg-primary, .bg-dark {
+            background-color: #2c3e50 !important;
+        }
+
+        /* Carousel Styling */
+        .hero-carousel {
+            height: 65vh;
+            overflow: hidden;
+            position: relative;
+            /* Space for search box */
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: #2c3e50;
+        }
+
+        .hero-carousel .carousel-item {
+            height: 65vh;
+            position: relative;
+            background: #ffffff;
+        }
+
+        .hero-carousel .carousel-item .carousel-text {
+            position: absolute;
+            top: 45%;
+            width: 100%;
+            text-align: center;            
+            color: #2c3e50;
+        }
+
+        .hero-carousel .carousel-item .carousel-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .hero-carousel .carousel-item .carousel-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+
         .hero-section {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
@@ -127,7 +182,6 @@ function formatDate($date)
 
         .content-section {
             background: #f8f9fa;
-            padding: 80px 0;
         }
 
         .section-title {
@@ -541,39 +595,74 @@ function formatDate($date)
 </head>
 
 <body>
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <div class="logo-section mb-4">
-                        <?php include('includes/logo.php')  ?>
-                        <div>
-                            <h1 class="brand-text">Flemington Properties</h1>
-                            <p class="brand-subtitle">REAL ESTATE ADVISORY</p>
-                        </div>
-                    </div>
 
-                    <h1 class="hero-title">WHERE DATA<br>DRIVES DECISIONS.</h1>
-                    <h2 class="hero-subtitle">Your Trusted Partner in Real Estate Strategy.</h2>
-                    <p class="hero-description">
-                        We don't sell hype. We deliver clarity, confidence, and results — powered by numbers.
-                    </p>
-                </div>
-                <div class="col-lg-4 text-end">
-                    <div class="chart-container">
-                        <div class="chart-title">10-Year AROI</div>
-                        <canvas id="aroiChart"></canvas>
-                        <div class="chart-source">Source: Flemington Research, 2025</div>
-                    </div>
+    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+        <div class="container justify-content-center align-items-center">
+            <div class="logo-section mb-4">
+                <div>
+                    <h1 class="brand-text text-center">Flemington</h1>
+                    <p class="brand-subtitle">INVESTMENT ADVISORY</p>
                 </div>
             </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-    </section>
+    </nav>
+
+
+    <!-- Hero Carousel Slider -->
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
+        </div>
+
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="carousel-text">
+                    <p class="carousel-title">Every investment, backed by research.</p>
+                    <p class="carousel-subtitle">From market timing to tax structuring — every move is informed.</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p class="carousel-title">A portfolio that grows and pays.</p>
+                    <p class="carousel-subtitle">Not just capital appreciation — but dependable passive income.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="carousel-text">
+                    <p class="carousel-title">A future you can hand down.</p>
+                    <p class="carousel-subtitle">We help you build for tomorrow, with confidence today.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <!-- Content Section -->
     <section class="content-section">
-        <div class="container">
+        <div class="container-fluid bg-dark mb-5 py-4">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="text-white">Flemington.ae</h2>
+                    <p class="text-white mb-0">Navigating Dubai Real Estate Investments with Precision</p>
+                </div>
+            </div>
+        </div>
+        <div class="container py-5">
             <div class="row">
                 <!-- What We Do -->
                 <div class="col-lg-6 mb-5">
