@@ -80,7 +80,8 @@ function formatDate($date)
         }
 
 
-        .bg-primary, .bg-dark {
+        .bg-primary,
+        .bg-dark {
             background-color: #2c3e50 !important;
         }
 
@@ -106,7 +107,7 @@ function formatDate($date)
             position: absolute;
             top: 45%;
             width: 100%;
-            text-align: center;            
+            text-align: center;
             color: #2c3e50;
         }
 
@@ -146,6 +147,11 @@ function formatDate($date)
             justify-content: center;
             color: #2c3e50;
             font-size: 24px;
+        }
+
+        .logo-icon img {
+            width: 250px;
+            margin-top: 2rem;
         }
 
         .brand-text {
@@ -600,8 +606,7 @@ function formatDate($date)
         <div class="container justify-content-center align-items-center">
             <div class="logo-section mb-4">
                 <div>
-                    <h1 class="brand-text text-center">Flemington</h1>
-                    <p class="brand-subtitle">INVESTMENT ADVISORY</p>
+                    <?php include 'includes/logo.php'; ?>
                 </div>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -627,7 +632,14 @@ function formatDate($date)
         <div class="carousel-inner">
             <!-- Slide 1 -->
             <div class="carousel-item active">
-                <div class="carousel-text">
+                <!-- video with overlay background -->
+                <div class="video-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
+                    <div style="position: absolute; width:100%; height: 100%; background: rgba(0 ,0, 0, 0.7)"></div>
+                    <video autoplay muted loop class="w-100 h-100" style="object-fit: cover;">
+                        <source src="https://media.istockphoto.com/id/1130999398/video/aerial-view-of-a-yacht-in-the-bay-of-dubai-during-sunset-u-a-e.mp4?s=mp4-640x640-is&k=20&c=0ASA4nKXKmSm3tBBO2n1J2Rf7GerJQJSpHufy2X55fo=" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-text" style="position: relative; z-index: 1; color: white;">
                     <p class="carousel-title">Every investment, backed by research.</p>
                     <p class="carousel-subtitle">From market timing to tax structuring — every move is informed.</p>
                 </div>
@@ -635,7 +647,14 @@ function formatDate($date)
 
             <!-- Slide 2 -->
             <div class="carousel-item">
-                <div class="carousel-text">
+                <!-- video with overlay background -->
+                <div class="video-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
+                    <div style="position: absolute; width:100%; height: 100%; background: rgba(0 ,0, 0, 0.7)"></div>
+                    <video autoplay muted loop class="w-100 h-100" style="object-fit: cover;">
+                        <source src="https://media.istockphoto.com/id/473356869/video/aerial-view-palm-atlantis-dubai.mp4?s=mp4-640x640-is&k=20&c=q2L92MljZZ9WMCucSBxTDwfZVrfhAhMzQECu_CNAfts=" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-text" style="position: relative; z-index: 1; color: white;">
                     <p class="carousel-title">A portfolio that grows and pays.</p>
                     <p class="carousel-subtitle">Not just capital appreciation — but dependable passive income.</p>
                 </div>
@@ -643,7 +662,14 @@ function formatDate($date)
 
             <!-- Slide 3 -->
             <div class="carousel-item">
-                <div class="carousel-text">
+                <!-- video with overlay background -->
+                <div class="video-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
+                    <div style="position: absolute; width:100%; height: 100%; background: rgba(0 ,0, 0, 0.7)"></div>
+                    <video autoplay muted loop class="w-100 h-100" style="object-fit: cover;">
+                        <source src="https://media.istockphoto.com/id/1366594945/video/two-young-brothers-jumping-off-the-boat-into-the-sea-at-sunset.mp4?s=mp4-640x640-is&k=20&c=XPYjnU_0KEekni2xK3GSF38pYlBja_vtdVpCeQX-n3k=" type="video/mp4">
+                    </video>
+                </div>
+                <div class="carousel-text" style="position: relative; z-index: 1; color: white;">
                     <p class="carousel-title">A future you can hand down.</p>
                     <p class="carousel-subtitle">We help you build for tomorrow, with confidence today.</p>
                 </div>
@@ -659,48 +685,59 @@ function formatDate($date)
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="text-white">Flemington.ae</h2>
                     <p class="text-white mb-0">Navigating Dubai Real Estate Investments with Precision</p>
+                    <button class="btn btn-danger mt-3">Know more <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
-        <div class="container py-5">
-            <div class="row">
+        <div class="container-fluid">
+            <div class="row py-5 px-5">
                 <!-- What We Do -->
-                <div class="col-lg-6 mb-5">
+                <div class="col-lg-6 col-sm-12">
                     <h3 class="section-title">WHAT WE DO</h3>
-                    <p class="mb-4"><strong>Insightful Real Estate Advisory built for:</strong></p>
+                    <p class="mb-3"><strong>Investment advisory built for:</strong></p>
 
                     <ul class="list-unstyled">
-                        <li class="mb-3">
-                            <strong>• Investors</strong><br>
-                            <span class="text-muted">looking to maximize ROI</span>
+                        <li class="mb-2">
+                            • International Investors
                         </li>
-                        <li class="mb-3">
-                            <strong>• Homebuyers</strong><br>
-                            <span class="text-muted">seeking value and timing</span>
+                        <li class="mb-2">
+                            • Expats moving to UAE
                         </li>
-                        <li class="mb-3">
-                            <strong>• Developers</strong><br>
-                            <span class="text-muted">evaluating land, location, and viability</span>
+                        <li class="mb-2">
+                            • Private Offices & UHNIs
                         </li>
-                        <li class="mb-4">
-                            <strong>• Institutions</strong><br>
-                            <span class="text-muted">needing due diligence & forecasting</span>
-                        </li>
-                    </ul>
-
-                    <h4 class="section-title mt-5">OUR APPROACH</h4>
-                    <p class="mb-3"><strong>Analytics First. Emotion Second.</strong></p>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">• Market Entry Timing</li>
-                        <li class="mb-2">• Growth Zone Identification</li>
-                        <li class="mb-2">• Risk-Adjusted Return Projections</li>
-                        <li class="mb-2">• Portfolio Performance Audits</li>
                     </ul>
                 </div>
-
+                <div class="col-lg-6 col-sm-12">
+                    <p class="mt-5">
+                        Across borders and asset types, we support clients with intelligent deal sourcing, active investment management, and strategic exits. Whether pursuing growth, timing a key purchase, or preserving family capital, our advisory blends insight, structure, and long-term clarity.
+                    </p>
+                </div>
+            </div>
+            <div class="row bg-white py-5 px-5">
                 <!-- Why Flemington Properties -->
-                <div class="col-lg-6 mb-5">
-                    <h3 class="section-title">WHY FLEMINGTON PROPERTIES?</h3>
+                <div class="col-lg-6 col-sm-12">
+
+                    <h4 class="section-title">OUR APPROACH</h4>
+                    <p class="mb-3"><strong>Analytics First. Emotion Second.</strong></p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">• Unbiased independent advice</li>
+                        <li class="mb-2">• Facts over instinct, logic over noise</li>
+                        <li class="mb-2">• Risk identified and managed</li>
+                        <li class="mb-2">• Growth zone and products identification </li>
+                        <li class="mb-2">• Market moves planned with precision</li>
+                        <li class="mb-2">• Comprehensive post-purchase support</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <p class="mt-5">At Flemington, we act with the discipline of a traditional investment house—measured, rational, and enduring. Our advice is unbiased and independent, guided by data, structure, and a clear view of risk. We plan with precision, support beyond the purchase, and focus not just on returns, but on building long-term value that lasts generations. Our vision is for the decades, not quarters!
+                    </p>
+                </div>
+            </div>
+
+            <div class="row py-5 px-5">
+                <div class="col-lg-6 col-sm-12">
+                    <h3 class="section-title mt-5">WHY FLEMINGTON PROPERTIES?</h3>
 
                     <div class="check-item">
                         <i class="fas fa-check check-icon"></i>
@@ -718,22 +755,10 @@ function formatDate($date)
                         <i class="fas fa-check check-icon"></i>
                         <span>Expert Team with Finance & Real Estate Credentials</span>
                     </div>
-
-                    <h4 class="section-title mt-5">SAMPLE INSIGHTS</h4>
-                    <div class="insight-box">
-                        <p class="mb-3">Properties within 5km of new metro projects have seen a 24% CAGR over 3 years — but only in low-supply corridors.</p>
-                        <p class="mb-0">In 2024, rental yields in Tier-2 cities outperformed Tier-1 by 1.3% on average — driven by hybrid worktrends.</p>
-                    </div>
-
-                    <a href="#" class="cta-button mb-4">
-                        Download Full 2025 Market Outlook <i class="fas fa-arrow-right ms-2"></i>
-                    </a>
                 </div>
-            </div>
-            <!-- Call to Action Section -->
-            <div class="row mt-5">
-                <div class="col-lg-8">
-                    <h3 class="section-title">LET'S TALK STRATEGY</h3>
+
+                <div class="col-lg-6 col-sm-12">
+                    <h3 class="section-title mt-5">LET'S TALK STRATEGY</h3>
                     <p class="mb-4">Whether you're buying your first asset or restructuring a portfolio — start with intelligence, not instinct.</p>
                     <button type="button" class="cta-button me-3 border-0" data-bs-toggle="modal" data-bs-target="#consultationModal">BOOK A FREE CONSULTATION</button>
                     <p class="mt-3 mb-0">
