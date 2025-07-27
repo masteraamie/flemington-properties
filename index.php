@@ -596,6 +596,12 @@ function formatDate($date)
                 flex-wrap: wrap;
                 gap: 10px !important;
             }
+
+            .navbar-toggler {
+                position: absolute;
+                right: 10px;
+            }
+
         }
     </style>
 </head>
