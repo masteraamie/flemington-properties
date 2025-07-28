@@ -24,12 +24,12 @@
                 </div>
             </div>
         </div>
-    </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+        <!-- Back to Top Button -->
+        <a href="#" class="btn btn-danger back-to-top float-end">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -40,7 +40,7 @@
             // Show/hide button based on scroll position
             window.addEventListener('scroll', function() {
                 if (window.pageYOffset > 300) {
-                    backToTopButton.style.display = 'flex';
+                    backToTopButton.style.display = 'inline-block';
                 } else {
                     backToTopButton.style.display = 'none';
                 }

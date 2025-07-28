@@ -72,538 +72,7 @@ function formatDate($date)
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-
-        .bg-primary,
-        .bg-dark {
-            background-color: #2c3e50 !important;
-        }
-
-        /* Carousel Styling */
-        .hero-carousel {
-            height: 65vh;
-            overflow: hidden;
-            position: relative;
-            /* Space for search box */
-        }
-
-        .carousel-indicators [data-bs-target] {
-            background-color: #2c3e50;
-        }
-
-        .hero-carousel .carousel-item {
-            height: 65vh;
-            position: relative;
-            background: #ffffff;
-        }
-
-        .hero-carousel .carousel-item .carousel-text {
-            position: absolute;
-            top: 45%;
-            width: 100%;
-            text-align: center;
-            color: #2c3e50;
-        }
-
-        .hero-carousel .carousel-item .carousel-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-
-        .hero-carousel .carousel-item .carousel-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-
-        .hero-section {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #2c3e50;
-            font-size: 24px;
-        }
-
-        .logo-icon img {
-            width: 250px;
-            margin-top: 2rem;
-        }
-
-        .brand-text {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .brand-subtitle {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            letter-spacing: 2px;
-            margin: 0;
-        }
-
-        .hero-title {
-            font-size: 4rem;
-            font-weight: bold;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.95;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 600px;
-        }
-
-        .content-section {
-            background: #f8f9fa;
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-        }
-
-        .check-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.8rem;
-        }
-
-        .check-icon {
-            color: #27ae60;
-            margin-right: 10px;
-            font-size: 1.1rem;
-        }
-
-        .cta-button {
-            background: #2c3e50;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #34495e;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .insight-box {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .footer-section {
-            background: #2c3e50;
-            color: white;
-            padding: 40px 0;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .brand-text {
-                font-size: 1.4rem;
-            }
-
-            .hero-section {
-                padding: 3rem 1rem 3rem 1rem;
-            }
-        }
-
-        .chart-container {
-            position: relative;
-            width: 100%;
-            margin-top: 20px;
-            background: linear-gradient(135deg, rgba(20, 30, 48, 0.9) 0%, rgba(30, 40, 60, 0.8) 100%);
-            border-radius: 10px;
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .chart-title {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #FFFFFF;
-            text-align: left;
-        }
-
-        .chart-source {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.6);
-            position: absolute;
-            bottom: 8px;
-            left: 20px;
-        }
-
-        .dubai-areas-section {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-auto-rows: 200px;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .area-card {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .area-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .large-card {
-            grid-row: span 2;
-            grid-column: span 2;
-        }
-
-        .medium-card {
-            grid-row: span 2;
-        }
-
-        .small-card {
-            grid-row: span 1;
-        }
-
-        .area-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /* background: linear-gradient(135deg, rgba(44, 62, 80, 0.7) 0%, rgba(52, 73, 94, 0.5) 100%); */
-            background: linear-gradient(135deg, rgb(0 0 0 / 70%) 0%, rgba(52, 73, 94, 0.5) 100%);
-            display: flex;
-            align-items: flex-end;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .area-card:hover .area-overlay {
-            background: linear-gradient(135deg, rgb(0 0 0 / 80%) 0%, rgba(52, 73, 94, 0.6) 100%);
-        }
-
-        .area-content {
-            color: white;
-            width: 100%;
-        }
-
-        .property-count {
-            font-size: 14px;
-            opacity: 0.9;
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .area-name {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: white;
-        }
-
-        .more-details-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            backdrop-filter: blur(10px);
-        }
-
-        .more-details-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateX(5px);
-        }
-
-        .more-details-btn i {
-            font-size: 10px;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .areas-grid {
-                grid-template-columns: 1fr;
-                grid-auto-rows: 250px;
-            }
-
-            .large-card,
-            .medium-card,
-            .small-card {
-                grid-row: span 1;
-                grid-column: span 1;
-            }
-
-            .area-name {
-                font-size: 1.5rem;
-            }
-
-            .dubai-areas-section {
-                padding: 60px 0;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .large-card {
-                grid-column: span 1;
-            }
-        }
-
-        .blog-section {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .featured-blog-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .featured-blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .featured-blog-card .blog-image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .featured-blog-card .blog-content {
-            padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .featured-blog-card .blog-category {
-            background: #2c3e50;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .featured-blog-card .blog-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        .featured-blog-card .blog-title a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .featured-blog-card .blog-title a:hover {
-            color: #34495e;
-        }
-
-        .featured-blog-card .blog-excerpt {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .featured-blog-card .blog-meta {
-            display: flex;
-            gap: 15px;
-            font-size: 13px;
-            color: #888;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-
-        .blog-card-small {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            height: 120px;
-        }
-
-        .blog-card-small:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .blog-image-small {
-            height: 120px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .blog-content-small {
-            padding: 15px;
-            height: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .blog-category-small {
-            background: #f8f9fa;
-            color: #2c3e50;
-            padding: 3px 8px;
-            border-radius: 10px;
-            font-size: 10px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        .blog-title-small {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            line-height: 1.3;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .blog-title-small a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .blog-title-small a:hover {
-            color: #34495e;
-        }
-
-        .blog-meta-small {
-            display: flex;
-            gap: 10px;
-            font-size: 11px;
-            color: #999;
-        }
-
-        @media (max-width: 768px) {
-            .blog-section {
-                padding: 60px 0;
-            }
-
-            .featured-blog-card .blog-image {
-                height: 200px;
-            }
-
-            .featured-blog-card .blog-content {
-                padding: 20px;
-            }
-
-            .featured-blog-card .blog-title {
-                font-size: 1.3rem;
-            }
-
-            .blog-card-small {
-                margin-bottom: 15px;
-            }
-
-            .blog-meta {
-                flex-wrap: wrap;
-                gap: 10px !important;
-            }
-
-            .navbar-toggler {
-                position: absolute;
-                right: 10px;
-            }
-
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 
 <body>
@@ -630,8 +99,6 @@ function formatDate($date)
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
         </div>
 
         <!-- Carousel Items -->
@@ -686,7 +153,7 @@ function formatDate($date)
 
     <!-- Content Section -->
     <section class="content-section">
-        <div class="container-fluid bg-dark mb-5 py-4">
+        <div class="container-fluid bg-dark py-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="text-white">Flemington.ae</h2>
@@ -695,55 +162,83 @@ function formatDate($date)
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row py-5 px-5">
-                <!-- What We Do -->
-                <div class="col-lg-6 col-sm-12">
-                    <h3 class="section-title">WHAT WE DO</h3>
-                    <p class="mb-3"><strong>Investment advisory built for:</strong></p>
+    </section>
 
-                    <ul class="list-unstyled">
-                        <li class="mb-2">
-                            • International Investors
-                        </li>
-                        <li class="mb-2">
-                            • Expats moving to UAE
-                        </li>
-                        <li class="mb-2">
-                            • Private Offices & UHNIs
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <p class="mt-5">
-                        Across borders and asset types, we support clients with intelligent deal sourcing, active investment management, and strategic exits. Whether pursuing growth, timing a key purchase, or preserving family capital, our advisory blends insight, structure, and long-term clarity.
-                    </p>
-                </div>
-            </div>
-            <div class="row bg-white py-5 px-5">
-                <!-- Why Flemington Properties -->
-                <div class="col-lg-6 col-sm-12">
+    <section>
+        <div id="aboutCarousel" class="carousel slide about-carousel" data-bs-ride="carousel" data-bs-interval="5000">
 
-                    <h4 class="section-title">OUR APPROACH</h4>
-                    <p class="mb-3"><strong>Analytics First. Emotion Second.</strong></p>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">• Unbiased independent advice</li>
-                        <li class="mb-2">• Facts over instinct, logic over noise</li>
-                        <li class="mb-2">• Risk identified and managed</li>
-                        <li class="mb-2">• Growth zone and products identification </li>
-                        <li class="mb-2">• Market moves planned with precision</li>
-                        <li class="mb-2">• Comprehensive post-purchase support</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <p class="mt-5">At Flemington, we act with the discipline of a traditional investment house—measured, rational, and enduring. Our advice is unbiased and independent, guided by data, structure, and a clear view of risk. We plan with precision, support beyond the purchase, and focus not just on returns, but on building long-term value that lasts generations. Our vision is for the decades, not quarters!
-                    </p>
-                </div>
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="1"></button>
             </div>
 
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <!-- What We Do -->
+                        <div class="col-lg-3 col-sm-12">
+                            <div>
+                                <h3 class="section-title text-danger">WHAT WE DO?</h3>
+                                <p class="mb-3"><strong>Investment advisory built for:</strong></p>
+
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        • International Investors
+                                    </li>
+                                    <li class="mb-2">
+                                        • Expats moving to UAE
+                                    </li>
+                                    <li class="mb-2">
+                                        • Private Offices & UHNIs
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-12">
+                            <p class="para-text mt-5">
+                                Across borders and asset types, we support clients with intelligent deal sourcing, active investment management, and strategic exits. Whether pursuing growth, timing a key purchase, or preserving family capital, our advisory blends insight, structure, and long-term clarity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-12">
+                            <div>
+                                <h4 class="section-title text-danger">OUR APPROACH?</h4>
+                                <p class="mb-3"><strong>Analytics First. Emotion Second.</strong></p>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">• Unbiased independent advice</li>
+                                    <li class="mb-2">• Facts over instinct, logic over noise</li>
+                                    <li class="mb-2">• Risk identified and managed</li>
+                                    <li class="mb-2">• Growth zone and products identification </li>
+                                    <li class="mb-2">• Market moves planned with precision</li>
+                                    <li class="mb-2">• Comprehensive post-purchase support</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-12">
+                            <p class="para-text mt-5">At Flemington, we act with the discipline of a traditional investment house—measured, rational, and enduring. Our advice is unbiased and independent, guided by data, structure, and a clear view of risk. We plan with precision, support beyond the purchase, and focus not just on returns, but on building long-term value that lasts generations. Our vision is for the decades, not quarters!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-primary why-flemington text-white">
+        <div class="container">
             <div class="row py-5 px-5">
                 <div class="col-lg-6 col-sm-12">
-                    <h3 class="section-title mt-5">WHY FLEMINGTON PROPERTIES?</h3>
+                    <h3 class="section-title  text-white mt-5">WHY FLEMINGTON PROPERTIES?</h3>
 
                     <div class="check-item">
                         <i class="fas fa-check check-icon"></i>
@@ -764,15 +259,17 @@ function formatDate($date)
                 </div>
 
                 <div class="col-lg-6 col-sm-12">
-                    <h3 class="section-title mt-5">LET'S TALK STRATEGY</h3>
+                    <h3 class="section-title  text-white mt-5">LET'S TALK STRATEGY</h3>
                     <p class="mb-4">Whether you're buying your first asset or restructuring a portfolio — start with intelligence, not instinct.</p>
-                    <button type="button" class="cta-button me-3 border-0" data-bs-toggle="modal" data-bs-target="#consultationModal">BOOK A FREE CONSULTATION</button>
+                    <button type="button" class="btn btn-danger me-3 border-0" data-bs-toggle="modal" data-bs-target="#consultationModal">BOOK A FREE CONSULTATION</button>
                     <p class="mt-3 mb-0">
-                        You can also reach us directly at <a href="mailto:ub@flemington.ae" class="text-decoration-none">ub@flemington.ae</a>
+                        You can also reach us directly at <a href="mailto:ub@flemington.ae" class="text-danger text-decoration-none">ub@flemington.ae</a>
                     </p>
                 </div>
             </div>
         </div>
+
+    </section>
     </section>
 
     <!-- Dubai Areas Section -->
@@ -789,8 +286,7 @@ function formatDate($date)
                 <!-- Business Bay -->
                 <div class="area-card large-card" style="background-image: url('/assets/images/dubai-neighborhood-business-bay.webp');">
                     <div class="area-overlay">
-                        <div class="area-content">
-                            <span class="property-count">12 Properties</span>
+                        <div class="area-content">                            
                             <h3 class="area-name">Business Bay</h3>
                             <button class="more-details-btn  d-none">
                                 <span>MORE DETAILS</span>
@@ -803,8 +299,7 @@ function formatDate($date)
                 <!-- Dubai Marina -->
                 <div class="area-card medium-card" style="background-image: url('/assets/images/DSubai-marina-2-780x780.webp');">
                     <div class="area-overlay">
-                        <div class="area-content">
-                            <span class="property-count">8 Properties</span>
+                        <div class="area-content">                            
                             <h3 class="area-name">Dubai Marina</h3>
                             <button class="more-details-btn  d-none">
                                 <span>MORE DETAILS</span>
@@ -817,8 +312,7 @@ function formatDate($date)
                 <!-- Downtown Dubai -->
                 <div class="area-card medium-card" style="background-image: url('/assets/images/Downtown-dubai-2-780x780.jpg');">
                     <div class="area-overlay">
-                        <div class="area-content">
-                            <span class="property-count">15 Properties</span>
+                        <div class="area-content">                            
                             <h3 class="area-name">Downtown Dubai</h3>
                             <button class="more-details-btn  d-none">
                                 <span>MORE DETAILS</span>
@@ -831,8 +325,7 @@ function formatDate($date)
                 <!-- Palm Jumeirah -->
                 <div class="area-card large-card" style="background-image: url('/assets/images/palm-jumeirah-dubai-990x600.webp');">
                     <div class="area-overlay">
-                        <div class="area-content">
-                            <span class="property-count">6 Properties</span>
+                        <div class="area-content">                            
                             <h3 class="area-name">Palm Jumeirah</h3>
                             <button class="more-details-btn d-none">
                                 <span>MORE DETAILS</span>
