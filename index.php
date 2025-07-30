@@ -158,7 +158,7 @@ function formatDate($date)
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="text-white">Flemington.ae</h2>
                     <p class="text-white mb-0">Navigating Dubai Real Estate Investments with Precision</p>
-                    <button class="btn btn-danger mt-3">Know more <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn btn-primary mt-3">Know more <i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
@@ -181,7 +181,7 @@ function formatDate($date)
                         <!-- What We Do -->
                         <div class="col-lg-3 col-sm-12">
                             <div>
-                                <h3 class="section-title text-danger">WHAT WE DO?</h3>
+                                <h3 class="section-title text-success">WHAT WE DO?</h3>
                                 <p class="mb-3"><strong>Investment advisory built for:</strong></p>
 
                                 <ul class="list-unstyled">
@@ -210,7 +210,7 @@ function formatDate($date)
                     <div class="row">
                         <div class="col-lg-3 col-sm-12">
                             <div>
-                                <h4 class="section-title text-danger">OUR APPROACH?</h4>
+                                <h4 class="section-title text-success">OUR APPROACH?</h4>
                                 <p class="mb-3"><strong>Analytics First. Emotion Second.</strong></p>
                                 <ul class="list-unstyled">
                                     <li class="mb-2">• Unbiased independent advice</li>
@@ -261,7 +261,7 @@ function formatDate($date)
                 <div class="col-lg-6 col-sm-12">
                     <h3 class="section-title  text-white mt-5">LET'S TALK STRATEGY</h3>
                     <p class="mb-4">Whether you're buying your first asset or restructuring a portfolio — start with intelligence, not instinct.</p>
-                    <button type="button" class="btn btn-danger me-3 border-0" data-bs-toggle="modal" data-bs-target="#consultationModal">BOOK A FREE CONSULTATION</button>
+                    <button type="button" class="btn btn-success me-3 border-0" data-bs-toggle="modal" data-bs-target="#consultationModal">BOOK A FREE CONSULTATION</button>
                     <p class="mt-3 mb-0">
                         You can also reach us directly at <a href="mailto:ub@flemington.ae" class="text-danger text-decoration-none">ub@flemington.ae</a>
                     </p>
@@ -269,7 +269,6 @@ function formatDate($date)
             </div>
         </div>
 
-    </section>
     </section>
 
     <!-- Dubai Areas Section -->
@@ -286,7 +285,7 @@ function formatDate($date)
                 <!-- Business Bay -->
                 <div class="area-card large-card" style="background-image: url('/assets/images/dubai-neighborhood-business-bay.webp');">
                     <div class="area-overlay">
-                        <div class="area-content">                            
+                        <div class="area-content">
                             <h3 class="area-name">Business Bay</h3>
                             <button class="more-details-btn  d-none">
                                 <span>MORE DETAILS</span>
@@ -299,7 +298,7 @@ function formatDate($date)
                 <!-- Dubai Marina -->
                 <div class="area-card medium-card" style="background-image: url('/assets/images/DSubai-marina-2-780x780.webp');">
                     <div class="area-overlay">
-                        <div class="area-content">                            
+                        <div class="area-content">
                             <h3 class="area-name">Dubai Marina</h3>
                             <button class="more-details-btn  d-none">
                                 <span>MORE DETAILS</span>
@@ -312,7 +311,7 @@ function formatDate($date)
                 <!-- Downtown Dubai -->
                 <div class="area-card medium-card" style="background-image: url('/assets/images/Downtown-dubai-2-780x780.jpg');">
                     <div class="area-overlay">
-                        <div class="area-content">                            
+                        <div class="area-content">
                             <h3 class="area-name">Downtown Dubai</h3>
                             <button class="more-details-btn  d-none">
                                 <span>MORE DETAILS</span>
@@ -325,7 +324,7 @@ function formatDate($date)
                 <!-- Palm Jumeirah -->
                 <div class="area-card large-card" style="background-image: url('/assets/images/palm-jumeirah-dubai-990x600.webp');">
                     <div class="area-overlay">
-                        <div class="area-content">                            
+                        <div class="area-content">
                             <h3 class="area-name">Palm Jumeirah</h3>
                             <button class="more-details-btn d-none">
                                 <span>MORE DETAILS</span>
